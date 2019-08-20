@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Product.css';
 
 export default function Product(props) {
+  const [countProduct, setCount] = useState(1);
+
   const {
     title, 
     description, 
@@ -59,8 +61,24 @@ export default function Product(props) {
         <p>Price:</p>
         <span>{`${price}$`}</span>
       </div>
+      <div className="cartProduct_count cartProduct_count__simpleProduct">
+        <button
+          onClick={() => setCount(countProduct + 1)}
+          className="cartProduct_button cartProduct_button__plus"
+        >
+          +
+        </button>
+        <span className="cartProduct_displayCount">{countProduct}</span>
+        <button
+          onClick={() => setCount(countProduct - 1)}
+          disabled={countProduct === 1}
+          className="cartProduct_button cartProduct_button__minus"
+        >
+          -
+        </button>
+      </div>
       <button 
-        onClick={() => buy(id)}
+        onClick={() => buy(id, countProduct)}
         className="product_buttonBuy"
       >
         buy

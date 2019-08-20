@@ -12,3 +12,10 @@
     justify-content: space-around;
   }
 }
+
+.catalog > .product > .cartProduct_count__simpleProduct {
+  display: flex;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+}

@@ -16,7 +16,7 @@ function mapStateToProps(state, ownProps) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    buy: id => dispatch(buyAction(id)),
+    buy: (id, count) => dispatch(buyAction(id, count)),
     deleteProduct: id => dispatch(deleteAction(id)),
     plusCount: (id) => dispatch(plusCountAction(id)),
     minusCount: (id) => dispatch(minusCountAction(id)),

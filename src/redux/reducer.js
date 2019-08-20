@@ -42,11 +42,12 @@ export default (state = initialState, action) => {
       const {products, cart} = state;
       let newCart = [...cart]
       let product = newCart.find(product => product.id === action.id);
+      console.log(action.count)
       if (product) {
-        product.count++
+        product.count = product.count + action.count;
       } else {
           let newProduct = products.find(product => product.id === action.id)
-          newProduct.count = 1;
+          newProduct.count = action.count;
           newCart.push(newProduct);
       }
       return {

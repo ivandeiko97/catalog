@@ -3,10 +3,11 @@ export const DELETE_FROM_CART = 'DELETE_FROM_CART';
 export const PLUS_COUNT_PRODUCT = 'PLUS_COUNT_PRODUCT';
 export const MINUS_COUNT_PRODUCT = 'MINUS_COUNT_PRODUCT'
 
-export function buyAction(id) {
+export function buyAction(id, count) {
   return {
     type: BUY_PRODUCT,
-    id
+    id,
+    count,
   };
 };
 
