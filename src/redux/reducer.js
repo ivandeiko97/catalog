@@ -1,4 +1,4 @@
-import { BUY_PRODUCT, DELETE_FROM_CART, CHANGE_COUNT_PRODUCT } from './action';
+import { BUY_PRODUCT, DELETE_FROM_CART, PLUS_COUNT_PRODUCT, MINUS_COUNT_PRODUCT } from './action';
 
 const initialState = {
   cart: [],
@@ -45,9 +45,9 @@ export default (state = initialState, action) => {
       if (product) {
         product.count++
       } else {
-        let newProduct = products.find(product => product.id === action.id)
-        newProduct.count = 1;
-        newCart.push(newProduct);
+          let newProduct = products.find(product => product.id === action.id)
+          newProduct.count = 1;
+          newCart.push(newProduct);
       }
       return {
         ...state,
@@ -58,27 +58,32 @@ export default (state = initialState, action) => {
         ...state,
         cart: state.cart.filter(product => product.id !== action.id)
       }
-    case CHANGE_COUNT_PRODUCT: 
+    case PLUS_COUNT_PRODUCT: 
       return {
         ...state,
         cart: state.cart.map(product => {
           if (product.id === action.id) {
             return {
               ...product,
-              count: action.sign === '+' 
-              ? 
-                product.count + 1 
-              : 
-                product.count === 1 
-                ? 
-                  product.count 
-                : 
-                  product.count - 1,
+              count: product.count + 1,
             };
           };
           return product;
         })
       }
+    case MINUS_COUNT_PRODUCT: 
+      return {
+        ...state,
+        cart: state.cart.map(product => {
+          if (product.id === action.id) {
+            return {
+              ...product,
+              count: product.count - 1,
+            };
+          };
+          return product;
+      })
+    }
     default:
       return state;
   };

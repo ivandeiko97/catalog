@@ -1,6 +1,7 @@
 export const BUY_PRODUCT = 'BUY_PRODUCT';
 export const DELETE_FROM_CART = 'DELETE_FROM_CART';
-export const CHANGE_COUNT_PRODUCT = 'CHANGE_COUNT_PRODUCT';
+export const PLUS_COUNT_PRODUCT = 'PLUS_COUNT_PRODUCT';
+export const MINUS_COUNT_PRODUCT = 'MINUS_COUNT_PRODUCT'
 
 export function buyAction(id) {
   return {
@@ -16,10 +17,16 @@ export function deleteAction(id) {
   };
 };
 
-export function changeCountAction(id, sign) {
+export function plusCountAction(id) {
   return {
-    type: CHANGE_COUNT_PRODUCT,
+    type: PLUS_COUNT_PRODUCT,
     id,
-    sign,
+  }
+}
+
+export function minusCountAction(id) {
+  return {
+    type: MINUS_COUNT_PRODUCT,
+    id,
   }
 }

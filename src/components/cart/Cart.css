@@ -28,6 +28,28 @@
   top: 50%;
 }
 
+.cartCatalog_buttonOrder {
+  display: block;
+  line-height: 50px;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #00ACDC;
+  width: 300px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.cartCatalog_buttonOrder:hover {
+  border: 1px solid #00ACDC;
+  background-color: #fff;
+  color: #00ACDC;
+}
+
 @media (max-width: 535px) {
   .cartCatalog_totalPrice {
     justify-content: center;

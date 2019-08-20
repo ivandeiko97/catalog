@@ -11,7 +11,8 @@ export default function Product(props) {
     cartProd,
     buy, 
     deleteProduct,
-    changeCount,
+    plusCount,
+    minusCount,
   } = props;
 
   if (cartProd) {
@@ -30,14 +31,14 @@ export default function Product(props) {
           </div>
           <div className="cartProduct_count">
             <button
-              onClick={() => changeCount(id, '+')}
+              onClick={() => plusCount(id)}
               className=" cartProduct_button cartProduct_button__plus"
             >
               +
             </button>
             <span className="cartProduct_displayCount">{count}</span>
             <button
-              onClick={() => changeCount(id, '-')}
+              onClick={() => minusCount(id, '-')}
               disabled={count === 1}
               className="cartProduct_button cartProduct_button__minus"
             >

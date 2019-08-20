@@ -1,5 +1,4 @@
 .header {
-  display: flex;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -10,6 +9,14 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.header_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center; 
+  height: 60px;
+  max-width: 1200px;
+  margin: auto;
+}
 .navigation_list {
   display: flex;
   width: 100%;
