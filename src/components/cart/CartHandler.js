@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import Cart from './Cart';
 
 function mapStateToProps(state) {
-  const { cart, total } = state;
+  const { cart } = state;
   return {
     cart,
-    total,
+    total: cart.reduce((total, product) => total + (product.price * product.count), 0),
   }
 }
 

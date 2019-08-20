@@ -3,7 +3,7 @@ import Header from './Header';
 
 function mapStateToProps(state) {
   return {
-    count: state.cart.length,
+    count: state.cart.reduce((count, product) => count + product.count, 0),
   }
 };
 
