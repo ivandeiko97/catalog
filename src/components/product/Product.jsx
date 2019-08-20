@@ -1,6 +1,5 @@
 import React from 'react';
 import './Product.css';
-import { buyAction } from '../../redux/action';
 
 export default function Product(props) {
   const {
@@ -14,35 +13,39 @@ export default function Product(props) {
     deleteProduct,
     changeCount,
   } = props;
+
   if (cartProd) {
     return (
       <section className="cartProduct">
-        <button 
-          onClick={() => deleteProduct(id)}
-          className="cartProduct_buttonDelete"
-        >
-          &times;
-        </button>
-        <div className="cartProduct_description">
-          <h1>{title}</h1>
-          <p>{description}</p>
-        </div>
-        <div className="cartProduct_count">
-          <button
-            onClick={() => changeCount(id, '+')}
-            className="cartProduct_buttonPlus"
+        <div className="cartProduct_wrapper">
+          <button 
+            onClick={() => deleteProduct(id)}
+            className="cartProduct_buttonDelete"
           >
-            +
+            &times;
           </button>
-          <span className="cartProduct_displayCount">{count}</span>
-          <button
-            onClick={() => changeCount(id, '-')}
-            className="cartProduct_buttonMinus"
-          >
-            -
-          </button>
+          <div className="cartProduct_description">
+            <h1>{title}</h1>
+            <p>{description}</p>
+          </div>
+          <div className="cartProduct_count">
+            <button
+              onClick={() => changeCount(id, '+')}
+              className=" cartProduct_button cartProduct_button__plus"
+            >
+              +
+            </button>
+            <span className="cartProduct_displayCount">{count}</span>
+            <button
+              onClick={() => changeCount(id, '-')}
+              disabled={count === 1}
+              className="cartProduct_button cartProduct_button__minus"
+            >
+              -
+            </button>
+          </div>
+          <span className="cartProduct_price">{`${price * count}$`}</span>
         </div>
-        <span className="cartProduct_price">{`${price * count}$`}</span>
       </section>
     )
   }

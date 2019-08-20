@@ -1,0 +1,11 @@
+.home {
+  width: 300px;
+  position: absolute;
+  left: calc(50% - 150px);
+  top: 50%;
+}
+
+.home p{
+  text-align: center;
+  font-size: 2g0px;
+}

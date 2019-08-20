@@ -25,6 +25,7 @@
   color: #000;
   font-size: 12px;
   font-weight: 500;
+  user-select: none;
 }
 
 .navigation_list a:hover {
@@ -33,4 +34,16 @@
 
 .activeLink {
   color: #00ACDC;
+}
+
+.navigation_cart {
+  position: relative;
+  display: block;
+  background-image: url(./icon/shopping-cart-black.png);
+  width: 32px;
+  height: 32px;
+}
+
+.navigation_cart:hover {
+  background-image: url(./icon/shopping-cart.png);
 }

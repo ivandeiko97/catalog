@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductHandler from '../product/ProductHandler';
+import './Cart.css'
 
 export default function Cart({ cart, total }) {
   if (cart.length !== 0) {
@@ -8,14 +9,14 @@ export default function Cart({ cart, total }) {
       <div className="cartCatalog">
         {cart.map(product => <ProductHandler key={product.id} cartProd={true} product={product}/>)}
         <div className="cartCatalog_totalPrice">
-          <span>total</span>
+          <span>total:</span>
           <p>{`${total}$`}</p>
         </div>
       </div>
     )
   }
   return (
-    <p> you cart empty :(</p>
+    <p className="cartCatalog_empty"> you cart is empty :(</p>
   )
 
 }

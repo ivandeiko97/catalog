@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import Catalog from './Catalog';
 
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   const { products } = state;
+
   return {
     products,
   };

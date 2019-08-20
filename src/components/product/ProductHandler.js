@@ -4,6 +4,7 @@ import { buyAction, deleteAction, changeCountAction } from '../../redux/action';
 
 function mapStateToProps(state, ownProps) {
   const { product } = ownProps;
+
   return {
     title: product.title,
     description: product.description,

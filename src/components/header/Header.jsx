@@ -3,19 +3,18 @@ import { NavLink } from 'react-router-dom';
 import './Header.css'
 
 export default function header() {
-  console.dir(window.location.pathname)
   return (
     <header className="header">
       <nav className="navigation">
         <ul className="navigation_list">
           <li>
-            <NavLink exact={true} activeClassName="activeLink" to="/">Home</NavLink>
+            <NavLink exact={true} to="/">Home</NavLink>
           </li>
           <li>
             <NavLink to="/catalog">Catalog</NavLink>
           </li>
           <li>
-            <NavLink to="/cart">Cart</NavLink>
+            <NavLink to="/cart" className="navigation_cart"></NavLink>
           </li>
         </ul>
       </nav>

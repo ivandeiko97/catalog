@@ -1,0 +1,36 @@
+.cartCatalog_totalPrice {
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+ max-width: 1200px;
+ margin: auto;
+}
+
+.cartCatalog_totalPrice > p {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+    font-size: 30px;
+
+}
+
+.cartCatalog_totalPrice > span {
+  font-size: 13px;
+  margin-right: 20px;
+} 
+
+.cartCatalog_empty {
+  width: 300px;
+  text-align: center;
+  font-size: 30px;
+  position: absolute;
+  left: calc(50% - 100px);
+  top: 50%;
+}
+
+@media (max-width: 535px) {
+  .cartCatalog_totalPrice {
+    justify-content: center;
+    margin-right: 45px;
+  }
+}
