@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Header from './components/header/Header';
+import HeaderHandler from './components/header/HeaderHandler';
 
 function App({ children }) {
   return (
     <div className="App">
-      <Header />
+      <HeaderHandler />
       <main>
         { children }
       </main>

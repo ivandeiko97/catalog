@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Shop from './redux/reducer';
-import Home from './components/home/Home';
 import { Provider } from 'react-redux';
 import CatalogHadler from './components/catalog/CatalogHandler';
 import CartHandler from './components/cart/CartHandler';
@@ -18,8 +17,7 @@ ReactDOM.render(
     <Router> 
       <App>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/catalog" component={CatalogHadler} />
+          <Route exact path="/" component={CatalogHadler} />
           <Route exact path="/cart" component={CartHandler} />
         </Switch>
       </App>
